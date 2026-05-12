@@ -107,7 +107,7 @@ namespace EnemyItemDisplays
     //   [
     //    {objectName},
     //    "",
-    //    { childName},
+    //    {childName},
     //    [{r:localPos.x},{r:localPos.y},{r:localPos.z}],
     //    [{r:localAngles.x},{r:localAngles.y},{r:localAngles.z}],
     //    [{r:localScale.x},{r:localScale.y},{r:localScale.z}],
