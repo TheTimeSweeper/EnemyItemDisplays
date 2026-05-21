@@ -11,7 +11,6 @@ namespace EnemyItemDisplays
 
         public static void PopulateDisplays()
         {
-            //PopulateFromBody("CommandoBody");
             PopulateDisplaysFromBody("MercBody");
         }
 
@@ -74,117 +73,7 @@ namespace EnemyItemDisplays
 
         #region add rule helpers
 
-        private static Object GetKeyAssetFromString(string itemName)
-        {
-            Object itemDef = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/" + itemName);
 
-            if (itemDef == null)
-            {
-                itemDef = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/" + itemName);
-            }
-
-            if (itemDef == null)
-            {
-                Log.Error("Could not load keyasset for " + itemName);
-            }
-
-            return itemDef;
-        }
-
-        public static ItemDisplayRuleSet.KeyAssetRuleGroup CreateGenericDisplayRuleGroup(Object keyAsset_, GameObject itemPrefab, string childName, Vector3 position, Vector3 rotation, Vector3 scale)
-        {
-            ItemDisplayRule singleRule = CreateDisplayRule(itemPrefab, childName, position, rotation, scale);
-            return CreateDisplayRuleGroupWithRules(keyAsset_, singleRule);
-        }
-
-        public static ItemDisplayRule CreateDisplayRule(string prefabName, string childName, Vector3 position, Vector3 rotation, Vector3 scale)
-        {
-            return CreateDisplayRule(LoadDisplay(prefabName), childName, position, rotation, scale);
-        }
-        public static ItemDisplayRule CreateDisplayRule(GameObject itemPrefab, string childName, Vector3 position, Vector3 rotation, Vector3 scale)
-        {
-            return new ItemDisplayRule
-            {
-                ruleType = ItemDisplayRuleType.ParentedPrefab,
-                childName = childName,
-                followerPrefab = itemPrefab,
-                limbMask = LimbFlags.None,
-                localPos = position,
-                localAngles = rotation,
-                localScale = scale
-            };
-        }
-
-        public static ItemDisplayRule CreateLimbMaskDisplayRule(LimbFlags limb)
-        {
-            return new ItemDisplayRule
-            {
-                ruleType = ItemDisplayRuleType.LimbMask,
-                limbMask = limb,
-                childName = "",
-                followerPrefab = null
-                //localPos = Vector3.zero,
-                //localAngles = Vector3.zero,
-                //localScale = Vector3.zero
-            };
-        }
-
-        public static ItemDisplayRuleSet.KeyAssetRuleGroup CreateDisplayRuleGroupWithRules(string itemName, params ItemDisplayRule[] rules)
-        {
-            return CreateDisplayRuleGroupWithRules(GetKeyAssetFromString(itemName), rules);
-        }
-        public static ItemDisplayRuleSet.KeyAssetRuleGroup CreateDisplayRuleGroupWithRules(Object keyAsset_, params ItemDisplayRule[] rules)
-        {
-            return new ItemDisplayRuleSet.KeyAssetRuleGroup
-            {
-                keyAsset = keyAsset_,
-                displayRuleGroup = new DisplayRuleGroup
-                {
-                    rules = rules
-                }
-            };
-        }
-
-        public static ItemDisplayRuleSet.KeyAssetRuleGroup CreateGenericDisplayRule(string itemName, string prefabName, string childName, Vector3 position, Vector3 rotation, Vector3 scale)
-        {
-            return CreateGenericDisplayRule(GetKeyAssetFromString(itemName), prefabName, childName, position, rotation, scale);
-        }
-        public static ItemDisplayRuleSet.KeyAssetRuleGroup CreateGenericDisplayRule(Object itemDef, string prefabName, string childName, Vector3 position, Vector3 rotation, Vector3 scale)
-        {
-            return CreateGenericDisplayRule(itemDef, LoadDisplay(prefabName), childName, position, rotation, scale);
-        }
-        public static ItemDisplayRuleSet.KeyAssetRuleGroup CreateGenericDisplayRule(string itemName, GameObject displayPrefab, string childName, Vector3 position, Vector3 rotation, Vector3 scale)
-        {
-            return CreateGenericDisplayRule(GetKeyAssetFromString(itemName), displayPrefab, childName, position, rotation, scale);
-        }
-        public static ItemDisplayRuleSet.KeyAssetRuleGroup CreateGenericDisplayRule(Object itemDef, GameObject displayPrefab, string childName, Vector3 position, Vector3 rotation, Vector3 scale)
-        {
-            if (displayPrefab == null)
-            {
-                Log.Warning("could not find display prefab for " + itemDef);
-            }
-
-            return new ItemDisplayRuleSet.KeyAssetRuleGroup
-            {
-                keyAsset = itemDef,
-                displayRuleGroup = new DisplayRuleGroup
-                {
-                    rules = new ItemDisplayRule[]
-                    {
-                        new ItemDisplayRule
-                        {
-                            ruleType = ItemDisplayRuleType.ParentedPrefab,
-                            childName = childName,
-                            followerPrefab = displayPrefab,
-                            limbMask = LimbFlags.None,
-                            localPos = position,
-                            localAngles = rotation,
-                            localScale = scale
-                        }
-                    }
-                }
-            };
-        }
         #endregion add rule helpers
     }
 }

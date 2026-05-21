@@ -1,8 +1,7 @@
 ﻿using BepInEx.Logging;
-using System.Security;
-using System.Security.Permissions;
 
-namespace EnemyItemDisplays {
+namespace EnemyItemDisplays
+{
     internal static class Log
     {
         internal static ManualLogSource _logSource;

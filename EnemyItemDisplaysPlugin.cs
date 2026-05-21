@@ -1,78 +1,118 @@
 ﻿using BepInEx;
 using BepInEx.Configuration;
+using RoR2;
+using SimpleJSON;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using EnemyItemDisplays.Monsters;
-using EnemyItemDisplays.Monsters.Bosses;
-using EnemyItemDisplays.Monsters.DLC0;
-using EnemyItemDisplays.Monsters.DLC1;
-using System.Security;
-using System.Security.Permissions;
+using UnityEngine;
 
-[module: UnverifiableCode]
-[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
+[assembly: HG.Reflection.SearchableAttribute.OptInAttribute]
 
 namespace EnemyItemDisplays
 {
-    [BepInPlugin("com.TheTimeSweeper.SillyEnemyItemDisplays", "SillyEnemyItemDisplays", "0.1.2")]
+    [BepInPlugin("com.TheTimeSweeper.SillyEnemyItemDisplays", "SillyEnemyItemDisplays", "0.2.0")]
     public class EnemyItemDisplaysPlugin : BaseUnityPlugin
     {
+        public static Dictionary<string, string> IDRSFiles = new Dictionary<string, string>();
+
+        public static ConfigEntry<bool> PrintUnused;
+
         void Awake()
         {
-            Log.Init(base.Logger);
-            ItemDisplays.PopulateDisplays();
+            Log.Init(Logger);
 
-            On.RoR2.ItemCatalog.Init += ItemCatalog_Init;
+            PrintUnused = Config.Bind<bool>("Item Displays", "Print Unused Item Displays", false, "Prints unused item displays for bodies that have at least some IDRS.");
+
+            var rulesPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(base.Info.Location), "Rules");
+            var allFiles = Directory.GetFiles(rulesPath, "*.json", SearchOption.AllDirectories);
+
+            foreach (var file in allFiles)
+            {
+                IDRSFiles.Add(System.IO.Path.GetFileNameWithoutExtension(file), file);
+            }
         }
 
-        private void ItemCatalog_Init(On.RoR2.ItemCatalog.orig_Init orig)
+        [SystemInitializer(new Type[] { typeof(BodyCatalog), typeof(ItemCatalog) })]
+        private static void Init()
         {
-            orig();
+            ItemDisplays.PopulateDisplays();
 
-            ItemDisplaysBase[] enemyItemDisplays = new ItemDisplaysBase[]
+            foreach (var body in BodyCatalog.allBodyPrefabs)
             {
-                #region bosses
-                new BeetleQueen(),
-                new GroveTender(),
-                new ImpOverlord(),
-                new StoneTitan(),
-                    //new Aurelionite(), shared with stonetitan
-                new WanderingVagrant(),
-                new ClayDuneStrider(),
-                #endregion
+                if (!IDRSFiles.TryGetValue(body.name, out var filePath))
+                {
+                    continue;
+                }
 
-                #region dlc0
-                new Beetle(),
-                new BeetleGuard(),
-                new ClayTemplar(),
-                new ElderLemurian(),
-                new GreaterWisp(),
-                new Imp(),
-                new JellyFish(),
-                new Lemurian(),
-                new Wisp(),
-                #endregion
+                var jsonNode = SimpleJSON.JSON.Parse(File.ReadAllText(filePath));
 
-                #region dlc1
-                new Gup(),
-                    new Geep(),
-                    new Gip(),
-                #endregion
-            };
+                var modelLocator = body.GetComponent<ModelLocator>();
+                if (!modelLocator) continue;
 
-            foreach (ItemDisplaysBase enemy in enemyItemDisplays)
-            {
-                enemy.Init();
+                if (!modelLocator.modelTransform) continue;
+
+                var characterModel = modelLocator.modelTransform.GetComponent<CharacterModel>();
+                if (!characterModel) continue;
+
+                var bodyIDRS = characterModel.itemDisplayRuleSet;
+                if (!bodyIDRS) continue;
+
+                var childLocator = characterModel.GetComponent<ChildLocator>();
+                if (!childLocator) continue;
+
+                var additionalChildren = jsonNode["additionalChildren"].AsArray.DeserializeAdditionalChildren();
+                foreach (var child in additionalChildren)
+                {
+                    Transform newTransform = characterModel.transform.Find(child.Path);
+                    if (!newTransform)
+                    {
+                        Log.Warning($"Error adding ChildLocator entry: Couldn't find transform for {child.Path} on body {body}.");
+                        continue;
+                    }
+
+                    HG.ArrayUtils.ArrayAppend(ref childLocator.transformPairs, new ChildLocator.NameTransformPair
+                    {
+                        name = child.Name,
+                        transform = newTransform
+                    });
+                }
+
+                foreach (JSONNode item in jsonNode["keyAssetRules"].AsArray)
+                {
+                    var karg = item.AsArray.DeserializeKARG();
+                    if (bodyIDRS.keyAssetRuleGroups.Where(keyAsset => keyAsset.keyAsset == karg.keyAsset).Any())
+                    {
+                        Log.Info($"Skipping IDR for object {karg.keyAsset} ({karg.keyAssetAddress}) for body {body.name} as body's IDRS already has an entry for it.");
+                        continue;
+                    }
+                    HG.ArrayUtils.ArrayAppend(ref bodyIDRS.keyAssetRuleGroups, karg);
+                    BookKeep.TotalAddedDisplays++;
+                }
+                if (PrintUnused.Value)
+                {
+                    ItemDisplayCheck.PrintUnused(bodyIDRS.keyAssetRuleGroups, body.name);
+                }
+                BookKeep.TotalPotentialDisplays += BookKeep.TotalVanillaItems;
+                BookKeep.MonstersAdded++;
             }
-
             BookKeep.Print();
         }
     }
+    // this is for KEB's IDRSHelper
+    //[
+    // {itemName},
+    //  [
+    //   [
+    //    {objectName},
+    //    "",
+    //    {childName},
+    //    [{r:localPos.x},{r:localPos.y},{r:localPos.z}],
+    //    [{r:localAngles.x},{r:localAngles.y},{r:localAngles.z}],
+    //    [{r:localScale.x},{r:localScale.y},{r:localScale.z}],
+    //   ]
+    //  ]
+    //],
 }
 
-/* for custom copy format in keb's helper
-{childName},
-                {localPos}, 
-                {localAngles},
-                {localScale})
-*/

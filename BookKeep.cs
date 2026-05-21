@@ -1,6 +1,6 @@
-﻿using System.Security;
+﻿using RoR2.ContentManagement;
+using System.Security;
 using System.Security.Permissions;
-using RoR2.ContentManagement;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -14,7 +14,8 @@ namespace EnemyItemDisplays
         public static int MonstersAdded = 0;
 
         private static int? totalVanillaItems = null;
-        public static int TotalVanillaItems {
+        public static int TotalVanillaItems
+        {
             get
             {
                 return ItemDisplays.KeyAssetDisplayPrefabs.Keys.Count;
@@ -47,17 +48,10 @@ namespace EnemyItemDisplays
                 return totalVanillaItems.Value;
             }
         }
-        
+
         public static void Print()
         {
             Log.Message($"Added iteme displays to {MonstersAdded} enemies. Total enemy item displays: {TotalAddedDisplays}/{TotalPotentialDisplays}");
         }
     }
 }
-
-/* for custom copy format in keb's helper
-{childName},
-                {localPos}, 
-                {localAngles},
-                {localScale})
-*/
