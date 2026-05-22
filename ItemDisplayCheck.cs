@@ -70,7 +70,10 @@ namespace EnemyItemDisplays
 
             SimpleJSON.JSONArray keyAssetArray = new SimpleJSON.JSONArray();
             SimpleJSON.JSONArray additionalChildrenArray = new SimpleJSON.JSONArray();
-
+            if (additionalChildren.Length == 0)
+            {
+                additionalChildren = new AdditionalChild[] { new AdditionalChild { Name = "ExampleChildName", Path = "Example/Child/Path/To/Transform" } };
+            }
             foreach(var child in additionalChildren)
             {
                 additionalChildrenArray.SerializeAdditionalChild(child);
@@ -138,11 +141,18 @@ namespace EnemyItemDisplays
             newJson["keyAssetRules"] = keyAssetArray;
 
             return newJson.ToString()
-                .Replace(",", ",\n")
-                .Replace("{", "{\n")
-                .Replace("}", "\n}")
-                .Replace("[", "[\n")
-                .Replace("]", "\n]"); 
+                .Replace("\"additionalChildren\":[", "\"additionalChildren\":\n[\n")
+                .Replace("],\"keyAssetRules\":[", "\n],\n\"keyAssetRules\":[\n")
+                .Replace("\"\",\"", "\"\",\n\"")
+                .Replace("]]]],", "]\n]]],\n")
+                .Replace("]]]]]", "]\n]]]\n]")
+                .Replace("]],[", "]\n],\n[")
+                //.Replace(",", ",\n")
+                //.Replace("{", "{\n")
+                //.Replace("}", "\n}")
+                //.Replace("[", "[\n")
+                //.Replace("]", "\n]")
+                ; 
         }
     }
 }

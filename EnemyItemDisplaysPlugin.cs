@@ -26,13 +26,22 @@ namespace EnemyItemDisplays
 
         public const string EXPORT_FOLDER = "Export";
 
+        void fuck() {
+            Awake();
+            Init();
+        }
+
         void Awake()
         {
             Log.Init(Logger);
 
             PluginInfo = base.Info;
 
-            PrintUnused = Config.Bind<bool>("Item Displays", "Export unused item displays", false, "Exports unused item displays into separate folder. It exports every rule that body has and then adds the ones that are missing with dummy values. Export happens only if the body has IDRS, export happens for each body and some bodies share IDRS, so be mindful of that.");
+            PrintUnused = Config.Bind<bool>(
+                "Item Displays", 
+                "Export unused item displays",
+                false, 
+                "Exports ALL unused item displays into separate folder. It exports every rule that body has and then adds the ones that are missing with dummy values. Export happens only if the body has IDRS, export happens for each body and some bodies share IDRS, so be mindful of that.");
 
             var rulesPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(PluginInfo.Location), RULES_FOLDER);
             var allFiles = Directory.GetFiles(rulesPath, "*.json", SearchOption.AllDirectories);
@@ -69,7 +78,7 @@ namespace EnemyItemDisplays
                     {
                         continue;
                     }
-
+                    Log.Debug($"Getting all text for {body.name} at {filePath}");
                     var jsonNode = SimpleJSON.JSON.Parse(File.ReadAllText(filePath));
 
                     var childLocator = characterModel.GetComponent<ChildLocator>();
@@ -78,6 +87,11 @@ namespace EnemyItemDisplays
                     additionalChildren = jsonNode["additionalChildren"].AsArray.DeserializeAdditionalChildren();
                     foreach (var child in additionalChildren)
                     {
+                        if (child.Name == "ExampeChildName")
+                        {
+                            continue;
+                        }
+
                         Transform newTransform = characterModel.transform.Find(child.Path);
                         if (!newTransform)
                         {
@@ -130,19 +144,11 @@ namespace EnemyItemDisplays
             BookKeep.Print();
         }
     }
-    // this is for KEB's IDRSHelper
-    //[
-    // {itemName},
-    //  [
-    //   [
-    //    {objectName},
-    //    "",
-    //    {childName},
-    //    [{r:localPos.x},{r:localPos.y},{r:localPos.z}],
-    //    [{r:localAngles.x},{r:localAngles.y},{r:localAngles.z}],
-    //    [{r:localScale.x},{r:localScale.y},{r:localScale.z}],
-    //   ]
-    //  ]
-    //],
 }
+/* this is for KEB's IDRSHelper
+          {childName},
+          [{r:localPos.x},{r:localPos.y},{r:localPos.z}],
+          [{r:localAngles.x},{r:localAngles.y},{r:localAngles.z}],
+          [{r:localScale.x},{r:localScale.y},{r:localScale.z}],
+*/
 

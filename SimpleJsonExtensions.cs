@@ -53,7 +53,7 @@ namespace EnemyItemDisplays
         public static KeyAssetRuleGroup DeserializeKARG(this JSONArray node)
         {
             var keyAssetRuleGroup = new KeyAssetRuleGroup();
-            if(node = null)
+            if(node == null)
             {
                 return keyAssetRuleGroup;
             }
@@ -108,7 +108,7 @@ namespace EnemyItemDisplays
             var node2 = new JSONArray();
             var keyAsset = ruleGroup.keyAsset;
 
-            if (ruleGroup.keyAsset == null && ruleGroup.keyAssetAddress.RuntimeKeyIsValid()) 
+            if (ruleGroup.keyAsset == null && ruleGroup.keyAssetAddress != null && ruleGroup.keyAssetAddress.RuntimeKeyIsValid()) 
             {
                 AsyncOperationHandle<UnityEngine.Object> handle = ruleGroup.keyAssetAddress.LoadAssetAsync<UnityEngine.Object>();
                 keyAsset = handle.WaitForCompletion();

@@ -80,4 +80,8 @@
 	  </None>
 	</ItemGroup>
 
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="REM add your pc username and path to install location. If not, the rest will just not run.&#xD;&#xA;if &quot;$(Username)&quot; == &quot;Erikbir&quot; set buildpath=&quot;E:\r2Profiles\Blinx Returns\BepInEx\plugins\TheTimesweeper-EnemyItemDisplays\&quot;&#xD;&#xA;if &quot;$(Username)&quot; == &quot;leomi&quot; set buildpath=&quot;C:\Users\leomi\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\Blinx Travels\BepInEx\plugins\TheTimesweeper-EnemyItemDisplays\&quot;&#xD;&#xA;&#xD;&#xA;if defined buildpath (&#xD;&#xA;&#xD;&#xA;copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)\Release\plugins\&quot;&#xD;&#xA;copy &quot;$(TargetDir)\EnemyItemDisplays.pdb&quot; &quot;$(ProjectDir)\Release\plugins\&quot;&#xD;&#xA;Xcopy /E /I /Y &quot;$(TargetDir)\Rules&quot; &quot;$(ProjectDir)\Release\plugins\Rules&quot;&#xD;&#xA;Xcopy /E /I /Y &quot;$(ProjectDir)\Release\plugins&quot; %25buildpath%25&#xD;&#xA;del &quot;$(ProjectDir)\Release\plugins\EnemyItemDisplays.pdb&quot;&#xD;&#xA;&#xD;&#xA;)&#xD;&#xA;" />
+	</Target>
+
 </Project>
