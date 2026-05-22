@@ -13,7 +13,7 @@ using static EnemyItemDisplays.SimpleJsonExtensions;
 
 namespace EnemyItemDisplays
 {
-    [BepInPlugin("com.TheTimeSweeper.SillyEnemyItemDisplays", "SillyEnemyItemDisplays", "0.2.0")]
+    [BepInPlugin("com.TheTimeSweeper.EnemyItemDisplays", "EnemyItemDisplays", "1.0.0")]
     public class EnemyItemDisplaysPlugin : BaseUnityPlugin
     {
         public static Dictionary<string, string> IDRSFiles = new Dictionary<string, string>();
@@ -87,7 +87,7 @@ namespace EnemyItemDisplays
                     additionalChildren = jsonNode["additionalChildren"].AsArray.DeserializeAdditionalChildren();
                     foreach (var child in additionalChildren)
                     {
-                        if (child.Name == "ExampeChildName")
+                        if (child.Name == "ExampeChildName" || child.Name == "ExampleChildName2")
                         {
                             continue;
                         }

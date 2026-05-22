@@ -72,7 +72,10 @@ namespace EnemyItemDisplays
             SimpleJSON.JSONArray additionalChildrenArray = new SimpleJSON.JSONArray();
             if (additionalChildren.Length == 0)
             {
-                additionalChildren = new AdditionalChild[] { new AdditionalChild { Name = "ExampleChildName", Path = "Example/Child/Path/To/Transform" } };
+                additionalChildren = new AdditionalChild[] {
+                    new AdditionalChild { Name = "ExampleChildName", Path = "Example/Child/Path/To/Transform" },
+                    new AdditionalChild { Name = "ExampleChildName2", Path = "Example/Child/Path/To/Transform2" } 
+                };
             }
             foreach(var child in additionalChildren)
             {
@@ -147,6 +150,7 @@ namespace EnemyItemDisplays
                 .Replace("]]]],", "]\n]]],\n")
                 .Replace("]]]]]", "]\n]]]\n]")
                 .Replace("]],[", "]\n],\n[")
+                .Replace("Transform\"],[\"ExampleChildName2", "Transform\"],\n[\"ExampleChildName2")
                 //.Replace(",", ",\n")
                 //.Replace("{", "{\n")
                 //.Replace("}", "\n}")

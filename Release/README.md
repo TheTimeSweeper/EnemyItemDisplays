@@ -7,9 +7,12 @@
 
 ping me in the modding discord for any bugs/suggestions- @thetimesweeper#5727
 
-Feel free to contribute to the repo, linked above. If you'd like to and don't know how, absolutely ping me so I can show you.
+## Calling all item display-heads
+Item displays can be exported for monsters and edited by anyone without needing to know how to code!
 
-Coming Soon, clear instructions and further setting up the repo so anyone can contribute item displays. There's many thousands of them to do, so this is an impossible task without a great community cooperation.
+There's many thousands of them to do, so this is an impossible task without a great community cooperation.
+
+Follow instructions on this page, and then send the .jsons to us!: https://thunderstore.io/package/TheTimesweeper/EnemyItemDisplays/wiki/5240-how-to-add-item-displays/
 
 ## Monsters Currently Affected
 Bosses
@@ -30,19 +33,8 @@ DLC0
 
 DLC1
 - Gup/Geep/Gip
+- AcidLarva
 
 ## Future Plans
 Add displays for all monsters  
 Possible support for modded items
-
-## Changelog
-`0.1.1`
-- readme fixes
-- but I refuse to ever update with just readme fixes so I added a few hippos
-
-`0.1.0`
-- yoinked all rob's item displays and made them work again
-- added a few more glasses  
-
-`0.0.1`
-- Initial release
