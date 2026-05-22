@@ -3,6 +3,8 @@ using RoR2.ContentManagement;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static EnemyItemDisplays.SimpleJsonExtensions;
+using static Rewired.UI.ControlMapper.ControlMapper;
 
 namespace EnemyItemDisplays
 {
@@ -55,14 +57,26 @@ namespace EnemyItemDisplays
 
         }
 
-        public static void PrintUnused(ItemDisplayRuleSet itemDisplayRuleSet, string bodyName)
+        public static string PrintUnused(ItemDisplayRuleSet itemDisplayRuleSet, AdditionalChild[] additionalChildren, string bodyName)
         {
-            PrintUnused(itemDisplayRuleSet.keyAssetRuleGroups.ToList(), bodyName);
+            return PrintUnused(itemDisplayRuleSet.keyAssetRuleGroups.ToList(), additionalChildren, bodyName);
         }
 
-        public static void PrintUnused(IEnumerable<ItemDisplayRuleSet.KeyAssetRuleGroup> ruleSet, string bodyName)
+        public static string PrintUnused(IEnumerable<ItemDisplayRuleSet.KeyAssetRuleGroup> ruleSet, AdditionalChild[] additionalChildren, string bodyName)
         {
-            string missingDisplays = $"generating item displays for {bodyName}";
+            Log.Info($"generating item displays for {bodyName}");
+
+            SimpleJSON.JSONObject newJson = new SimpleJSON.JSONObject();
+
+            SimpleJSON.JSONArray keyAssetArray = new SimpleJSON.JSONArray();
+            SimpleJSON.JSONArray additionalChildrenArray = new SimpleJSON.JSONArray();
+
+            foreach(var child in additionalChildren)
+            {
+                additionalChildrenArray.SerializeAdditionalChild(child);
+            }
+
+            newJson["additionalChildren"] = additionalChildrenArray;
 
             //grab all keyassets
             if (allDisplayedItems == null)
@@ -73,6 +87,8 @@ namespace EnemyItemDisplays
             string firstCompatibleChild = "";
             foreach (ItemDisplayRuleSet.KeyAssetRuleGroup ruleGroup in ruleSet)
             {
+                keyAssetArray.SerializeKARG(ruleGroup);
+
                 if (ruleGroup.displayRuleGroup.rules == null) continue;
                 if (ruleGroup.displayRuleGroup.rules.Length == 0)
                     continue;
@@ -87,54 +103,46 @@ namespace EnemyItemDisplays
             //print all display rules
             foreach (Object keyAsset in missingKeyAssets)
             {
-                string thing = $"";
-                if (ItemDisplays.KeyAssetDisplayPrefabs.ContainsKey(keyAsset))
+                if (!ItemDisplays.KeyAssetDisplayPrefabs.TryGetValue(keyAsset, out var prefabList))
                 {
-                    //if we have a displayprefab for it (Populated in ItemDisplays.PopulateDisplays),
-                    //generate a rule formatted to the code in this project
-                    thing += SpitOutNewRule(keyAsset, firstCompatibleChild, ItemDisplays.KeyAssetDisplayPrefabs[keyAsset]);
+                    continue;
                 }
-                else
+
+                ItemDisplayRuleSet.KeyAssetRuleGroup karg = new ItemDisplayRuleSet.KeyAssetRuleGroup()
                 {
-                    Log.Error($"COULD NOT FIND DISPLAY PREFABS FOR KEYASSET {keyAsset}");
+                    keyAsset = keyAsset,
+                    displayRuleGroup = new DisplayRuleGroup()
+                    {
+                    }
+                };
+
+                ItemDisplayRule[] rules = new ItemDisplayRule[prefabList.Count];
+                for(int i = 0; i < prefabList.Count; i++)
+                {
+                    rules[i] = new ItemDisplayRule()
+                    {
+                        childName = firstCompatibleChild,
+                        followerPrefab = ItemDisplays.LoadDisplay(prefabList[i]),
+                        localAngles = Vector3.zero,
+                        localPos = Vector3.zero,
+                        localScale = Vector3.one,
+                        ruleType = ItemDisplayRuleType.ParentedPrefab
+                    };
                 }
-                missingDisplays += thing;
-            }
-            //add them all to a giant string and print it out, formatted
-            Log.Message(missingDisplays);
-        }
 
-        private static string SpitOutNewRule(Object asset, string firstCompatibleChild, List<string> prefabNames)
-        {
-            string contentType = asset is ItemDef ? "Items" : "Equipment";
+                karg.displayRuleGroup.rules = rules;
 
-            if (prefabNames.Count == 0)
-                return $"\n[NO PREFABS FOUND FOR THE KEYASSET {asset}";
-
-            if (prefabNames.Count == 1)
-            {
-                return string.Format(
-                    "  [\r\n   \"{0}\",\r\n   [\r\n    [\r\n     \"{1}\",\r\n     \"{2}\",\r\n     \"{3}\",\r\n     [2,2,2],\r\n     [0,0,0],\r\n     [1,1,1]\r\n    ]\r\n   ]\r\n  ],\r\n",
-                    asset.name,
-                    prefabNames[0],
-                    "", // TODO: asset guid will most likely become a thing in DLC3
-                    firstCompatibleChild
-                    );
+                keyAssetArray.SerializeKARG(karg);
             }
 
-            string newRule = string.Format("  [\r\n   \"{0}\",\r\n   [\r\n", asset.name);
-            List<string> displays = new List<string>();
-            for (int i = 0; i < prefabNames.Count; i++)
-            {
-                displays.Add(string.Format(
-                    "    [\r\n     \"{0}\",\r\n     \"{1}\",\r\n     \"{2}\",\r\n     [2,2,2],\r\n     [0,0,0],\r\n     [1,1,1]\r\n    ]",
-                    prefabNames[0],
-                    "", // TODO: asset guid will most likely become a thing in DLC3
-                    firstCompatibleChild));
-            }
-            newRule += string.Join(",\r\n", displays);
-            newRule += "\r\n   ]\r\n  ],\r\n";
-            return newRule;
+            newJson["keyAssetRules"] = keyAssetArray;
+
+            return newJson.ToString()
+                .Replace(",", ",\n")
+                .Replace("{", "{\n")
+                .Replace("}", "\n}")
+                .Replace("[", "[\n")
+                .Replace("]", "\n]"); 
         }
     }
 }

@@ -1,7 +1,10 @@
 ﻿using RoR2;
 using SimpleJSON;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using static RoR2.ItemDisplayRuleSet;
 
 namespace EnemyItemDisplays
@@ -24,6 +27,11 @@ namespace EnemyItemDisplays
         {
             List<AdditionalChild> list = new List<AdditionalChild>();
 
+            if(node == null)
+            {
+                return Array.Empty<AdditionalChild>();
+            }
+
             foreach (JSONArray child in node)
             {
                 list.Add(new AdditionalChild(child[0], child[1]));
@@ -32,9 +40,24 @@ namespace EnemyItemDisplays
             return list.ToArray();
         }
 
+        public static void SerializeAdditionalChild(this JSONNode node, AdditionalChild child)
+        {
+            JSONArray newElement = new JSONArray
+            {
+                child.Name,
+                child.Path
+            };
+            node.Add(newElement);
+        }
+
         public static KeyAssetRuleGroup DeserializeKARG(this JSONArray node)
         {
             var keyAssetRuleGroup = new KeyAssetRuleGroup();
+            if(node = null)
+            {
+                return keyAssetRuleGroup;
+            }
+
             string keyAssetName = node[0];
 
             UnityEngine.Object keyAsset = null;
@@ -82,14 +105,28 @@ namespace EnemyItemDisplays
 
         public static void SerializeKARG(this JSONNode node, KeyAssetRuleGroup ruleGroup)
         {
-            node.Add(ruleGroup.keyAsset.name);
+            var node2 = new JSONArray();
+            var keyAsset = ruleGroup.keyAsset;
+
+            if (ruleGroup.keyAsset == null && ruleGroup.keyAssetAddress.RuntimeKeyIsValid()) 
+            {
+                AsyncOperationHandle<UnityEngine.Object> handle = ruleGroup.keyAssetAddress.LoadAssetAsync<UnityEngine.Object>();
+                keyAsset = handle.WaitForCompletion();
+                Addressables.Release(handle);
+            }
+
+            if (keyAsset == null)
+            {
+                return;
+            };
+            node2.Add(keyAsset.name);
             JSONArray rules = new JSONArray();
             foreach (var rule in ruleGroup.displayRuleGroup.rules)
             {
                 JSONArray ruleJson = new JSONArray
                 {
                     rule.followerPrefab != null ? rule.followerPrefab.name : "",
-                    rule.followerPrefabAddress != null && rule.followerPrefabAddress.IsValid() ? rule.followerPrefabAddress.AssetGUID : "",
+                    rule.followerPrefabAddress != null && rule.followerPrefabAddress.RuntimeKeyIsValid() ? rule.followerPrefabAddress.AssetGUID : "",
                     rule.childName,
                     new JSONArray().WriteVector3(rule.localPos),
                     new JSONArray().WriteVector3(rule.localAngles),
@@ -97,7 +134,8 @@ namespace EnemyItemDisplays
                 };
                 rules.Add(ruleJson);
             }
-            node.Add(rules);
+            node2.Add(rules);
+            node.Add(node2);
         }
 
         // Vector2 and Vector3 conversions are taken from official repo:
