@@ -18,64 +18,64 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Rules\DLC1\" />
-	  <Folder Include="Rules\DLC2\" />
-	  <Folder Include="Rules\RoR2\" />
+	  <Folder Include="Rules\RoR2.DLC1\" />
+	  <Folder Include="Rules\RoR2.DLC2\" />
+	  <Folder Include="Rules\RoR2.BaseContent\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="Rules\DLC1\GeepBody.json">
+	  <None Update="Rules\RoR2.DLC1\GeepBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\DLC1\GipBody.json">
+	  <None Update="Rules\RoR2.DLC1\GipBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\DLC1\GupBody.json">
+	  <None Update="Rules\RoR2.DLC1\GupBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\BeetleBody.json">
+	  <None Update="Rules\RoR2.BaseContent\BeetleBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\BeetleGuardBody.json">
+	  <None Update="Rules\RoR2.BaseContent\BeetleGuardBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\BeetleQueen2Body.json">
+	  <None Update="Rules\RoR2.BaseContent\BeetleQueen2Body.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\ClayBossBody.json">
+	  <None Update="Rules\RoR2.BaseContent\ClayBossBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\ClayBruiserBody.json">
+	  <None Update="Rules\RoR2.BaseContent\ClayBruiserBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\GravekeeperBody.json">
+	  <None Update="Rules\RoR2.BaseContent\GravekeeperBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\GreaterWispBody.json">
+	  <None Update="Rules\RoR2.BaseContent\GreaterWispBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\ImpBody.json">
+	  <None Update="Rules\RoR2.BaseContent\ImpBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\ImpBossBody.json">
+	  <None Update="Rules\RoR2.BaseContent\ImpBossBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\JellyfishBody.json">
+	  <None Update="Rules\RoR2.BaseContent\JellyfishBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\LemurianBody.json">
+	  <None Update="Rules\RoR2.BaseContent\LemurianBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\LemurianBruiserBody.json">
+	  <None Update="Rules\RoR2.BaseContent\LemurianBruiserBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\TitanBody.json">
+	  <None Update="Rules\RoR2.BaseContent\TitanBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\VagrantBody.json">
+	  <None Update="Rules\RoR2.BaseContent\VagrantBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Rules\RoR2\WispBody.json">
+	  <None Update="Rules\RoR2.BaseContent\WispBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>
