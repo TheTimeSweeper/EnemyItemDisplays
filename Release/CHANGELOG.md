@@ -1,4 +1,11 @@
 ## Changelog
+`1.1.1`
+- fixed default config
+
+`1.1.0`
+- Updated exported rules .json files to add every bone to the child locator
+- added a few silly rules to AcidLarva for test
+
 `1.0.0`
 - huge refactor to API to use generated .json files, so anyone can contribute item displays without needing to know how to code
   - huge thanks to viliger for making this all possible

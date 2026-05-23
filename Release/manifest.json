@@ -1,6 +1,6 @@
 {
     "name": "EnemyItemDisplays",
-    "version_number": "1.0.0",
+    "version_number": "1.1.1",
     "website_url": "https://github.com/TheTimeSweeper/EnemyItemDisplays",
     "description": "Adds item displays to some monsters! | Huge rewrite. Ability to add displays without code. See Readme for contributing. | Originally by rob. Carrying on the torch, hopefully",
     "dependencies": [

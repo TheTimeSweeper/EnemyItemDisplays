@@ -45,14 +45,12 @@ namespace EnemyItemDisplays
                 false,
                 "Exports ALL unused item displays into separate folder.\nIt exports every rule that body has and then adds the ones that are missing with dummy values. Also adds Child Locator entries for any bones not already in child locator.\nExport happens only if the body has IDRS, export happens for each body and some bodies share IDRS, so be mindful of that.");
             
-            
             AllowStubs = Config.Bind<bool>(
                 "Item Displays",
-                "Allow Unused Child Locator Entires",
+                "Allow Unused Child Locator Entries",
                 false,
                 "By default, the mod will skip IDRS with default values and additionalChildren entries in the .json files that do not have any IDRS entries. Enable this so that they are no longer skipped, and thus can be used for new sets.");
             
-
             var rulesPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(PluginInfo.Location), RULES_FOLDER);
             var allFiles = Directory.GetFiles(rulesPath, "*.json", SearchOption.AllDirectories);
 
