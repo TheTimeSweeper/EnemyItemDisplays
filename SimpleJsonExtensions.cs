@@ -87,14 +87,20 @@ namespace EnemyItemDisplays
             JSONArray rules = node[1].AsArray;
             foreach (JSONArray rule in rules)
             {
+                var position = rule[3].AsArray.ReadVector3();
+                var angles = rule[4].AsArray.ReadVector3();
+                var scale = rule[5].AsArray.ReadVector3();
+                if (!EnemyItemDisplaysPlugin.AllowStubs.Value && position == default && angles == default && scale == Vector3.one)
+                    continue;
+
                 var idr = new ItemDisplayRule();
                 idr.ruleType = (ItemDisplayRuleType)rule[0].AsInt;
                 idr.followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(rule[1]);
                 idr.followerPrefab = ItemDisplays.LoadDisplay(rule[0]);
                 idr.childName = rule[2];
-                idr.localPos = rule[3].AsArray.ReadVector3();
-                idr.localAngles = rule[4].AsArray.ReadVector3();
-                idr.localScale = rule[5].AsArray.ReadVector3();
+                idr.localPos = position;
+                idr.localAngles = angles;
+                idr.localScale = scale;
                 displayRuleGroup.AddDisplayRule(idr);
             }
 
@@ -184,9 +190,17 @@ namespace EnemyItemDisplays
         public static Vector3 ReadVector3(this JSONNode node, Vector3 aDefault)
         {
             if (node.IsObject)
-                return new Vector3(node["x"].AsFloat, node["y"].AsFloat, node["z"].AsFloat);
+                return new Vector3(
+                    MathF.Round(node["x"].AsFloat, 3), 
+                    MathF.Round(node["y"].AsFloat, 3),
+                    MathF.Round(node["z"].AsFloat, 3)
+                    );
             if (node.IsArray)
-                return new Vector3(node[0].AsFloat, node[1].AsFloat, node[2].AsFloat);
+                return new Vector3(
+                    MathF.Round(node[0].AsFloat, 3), 
+                    MathF.Round(node[1].AsFloat, 3),
+                    MathF.Round(node[2].AsFloat, 3)
+                    );
             return aDefault;
         }
         public static Vector3 ReadVector3(this JSONNode node, string aXName, string aYName, string aZName)

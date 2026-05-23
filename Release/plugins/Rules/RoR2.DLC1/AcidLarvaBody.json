@@ -1,0 +1,726 @@
+{"additionalChildren":
+  [
+    [ "FrontLeg_Calf.L", "Acid Larva Armature/Root/Body/BodyBase/Mandible1.L/FrontLeg_Thigh2.L/FrontLeg_Calf.L" ],
+    [ "AcidLarva", "" ],
+    [ "Acid Larva Armature", "Acid Larva Armature" ],
+    [ "Body", "Acid Larva Armature/Root/Body" ],
+    [ "Beak.Lower", "Acid Larva Armature/Root/Body/BodyBase/Beak.Lower" ],
+    [ "FrontLeg_Thigh1.L", "Acid Larva Armature/Root/Body/BodyBase/FrontLeg_Thigh1.L" ],
+    [ "FrontLeg_Thigh2.L", "Acid Larva Armature/Root/Body/BodyBase/FrontLeg_Thigh1.L/FrontLeg_Thigh2.L" ],
+    [ "FrontLeg_Calf.L", "Acid Larva Armature/Root/Body/BodyBase/FrontLeg_Thigh1.L/FrontLeg_Thigh2.L/FrontLeg_Calf.L" ],
+    [ "FrontLeg_Foot.L", "Acid Larva Armature/Root/Body/BodyBase/FrontLeg_Thigh1.L/FrontLeg_Thigh2.L/FrontLeg_Calf.L/FrontLeg_Foot.L" ],
+    [ "FrontLeg_Thigh1.R", "Acid Larva Armature/Root/Body/BodyBase/FrontLeg_Thigh1.R" ],
+    [ "FrontLeg_Thigh2.R", "Acid Larva Armature/Root/Body/BodyBase/FrontLeg_Thigh1.R/FrontLeg_Thigh2.R" ],
+    [ "FrontLeg_Calf.R", "Acid Larva Armature/Root/Body/BodyBase/FrontLeg_Thigh1.R/FrontLeg_Thigh2.R/FrontLeg_Calf.R" ],
+    [ "FrontLeg_Foot.R", "Acid Larva Armature/Root/Body/BodyBase/FrontLeg_Thigh1.R/FrontLeg_Thigh2.R/FrontLeg_Calf.R/FrontLeg_Foot.R" ],
+    [ "Mandible1.L", "Acid Larva Armature/Root/Body/BodyBase/Mandible1.L" ],
+    [ "Mandible2.L", "Acid Larva Armature/Root/Body/BodyBase/Mandible1.L/Mandible2.L" ],
+    [ "Mandible3.L", "Acid Larva Armature/Root/Body/BodyBase/Mandible1.L/Mandible2.L/Mandible3.L" ],
+    [ "Mandible1.R", "Acid Larva Armature/Root/Body/BodyBase/Mandible1.R" ],
+    [ "Mandible2.R", "Acid Larva Armature/Root/Body/BodyBase/Mandible1.R/Mandible2.R" ],
+    [ "Mandible3.R", "Acid Larva Armature/Root/Body/BodyBase/Mandible1.R/Mandible2.R/Mandible3.R" ],
+    [ "MidLeg_Thigh1.L", "Acid Larva Armature/Root/Body/BodyBase/MidLeg_Thigh1.L" ],
+    [ "MidLeg_Thigh2.L", "Acid Larva Armature/Root/Body/BodyBase/MidLeg_Thigh1.L/MidLeg_Thigh2.L" ],
+    [ "MidLeg_Calf.L", "Acid Larva Armature/Root/Body/BodyBase/MidLeg_Thigh1.L/MidLeg_Thigh2.L/MidLeg_Calf.L" ],
+    [ "MidLeg_Foot.L", "Acid Larva Armature/Root/Body/BodyBase/MidLeg_Thigh1.L/MidLeg_Thigh2.L/MidLeg_Calf.L/MidLeg_Foot.L" ],
+    [ "MidLeg_Thigh1.R", "Acid Larva Armature/Root/Body/BodyBase/MidLeg_Thigh1.R" ],
+    [ "MidLeg_Thigh2.R", "Acid Larva Armature/Root/Body/BodyBase/MidLeg_Thigh1.R/MidLeg_Thigh2.R" ],
+    [ "MidLeg_Calf.R", "Acid Larva Armature/Root/Body/BodyBase/MidLeg_Thigh1.R/MidLeg_Thigh2.R/MidLeg_Calf.R" ],
+    [ "MidLeg_Foot.R", "Acid Larva Armature/Root/Body/BodyBase/MidLeg_Thigh1.R/MidLeg_Thigh2.R/MidLeg_Calf.R/MidLeg_Foot.R" ],
+    [ "RearLeg_Thigh1.L", "Acid Larva Armature/Root/Body/BodyBase/RearLeg_Thigh1.L" ],
+    [ "RearLeg_Thigh2.L", "Acid Larva Armature/Root/Body/BodyBase/RearLeg_Thigh1.L/RearLeg_Thigh2.L" ],
+    [ "RearLeg_Calf.L", "Acid Larva Armature/Root/Body/BodyBase/RearLeg_Thigh1.L/RearLeg_Thigh2.L/RearLeg_Calf.L" ],
+    [ "RearLeg_Foot.L", "Acid Larva Armature/Root/Body/BodyBase/RearLeg_Thigh1.L/RearLeg_Thigh2.L/RearLeg_Calf.L/RearLeg_Foot.L" ],
+    [ "RearLeg_Thigh1.R", "Acid Larva Armature/Root/Body/BodyBase/RearLeg_Thigh1.R" ],
+    [ "RearLeg_Thigh2.R", "Acid Larva Armature/Root/Body/BodyBase/RearLeg_Thigh1.R/RearLeg_Thigh2.R" ],
+    [ "RearLeg_Calf.R", "Acid Larva Armature/Root/Body/BodyBase/RearLeg_Thigh1.R/RearLeg_Thigh2.R/RearLeg_Calf.R" ],
+    [ "RearLeg_Foot.R", "Acid Larva Armature/Root/Body/BodyBase/RearLeg_Thigh1.R/RearLeg_Thigh2.R/RearLeg_Calf.R/RearLeg_Foot.R" ],
+    [ "SacFront.L", "Acid Larva Armature/Root/Body/BodyBase/SacFront.L" ],
+    [ "SacFront.R", "Acid Larva Armature/Root/Body/BodyBase/SacFront.R" ],
+    [ "SacLargeMid.L", "Acid Larva Armature/Root/Body/BodyBase/SacLargeMid.L" ],
+    [ "SacLargeMid.R", "Acid Larva Armature/Root/Body/BodyBase/SacLargeMid.R" ],
+    [ "SacLowBack.L", "Acid Larva Armature/Root/Body/BodyBase/SacLowBack.L" ],
+    [ "SacLowBack.R", "Acid Larva Armature/Root/Body/BodyBase/SacLowBack.R" ],
+    [ "SacLowFront.L", "Acid Larva Armature/Root/Body/BodyBase/SacLowFront.L" ],
+    [ "SacLowFront.R", "Acid Larva Armature/Root/Body/BodyBase/SacLowFront.R" ],
+    [ "Hurtbox", "Acid Larva Armature/Root/Body/BodyBase/Hurtbox" ],
+    [ "mdlAcidLarvaBody", "mdlAcidLarvaBody" ],
+    [ "mdlAcidLarvaSacs", "mdlAcidLarvaSacs" ],
+    [ "LogBookTarget", "LogBookTarget" ],
+    [ "LogBookCamera", "LogBookTarget/LogBookCamera" ],
+    [ "AimAssist", "AimAssist" ]
+  ],
+"keyAssetRules":[
+["EliteVoidEquipment",[["DisplayAffixVoid","",
+"BodyBase",[0,2.48000001907349,-4.01999998092651],[72.2409973144531,180,0],[2.32599997520447,2.32599997520447,2.32599997520447]
+]]],
+["EliteCollectiveEquipment",[["DisplayEliteCollectiveHorn","",
+"BeakUpper",[-0.360000014305115,0.837000012397766,0.324000000953674],[90,0,0],[0.5,0.5,0.5]
+],
+["DisplayEliteCollectiveRing","",
+"BeakUpper",[0,1.12699997425079,0],[270,0,0],[1,1,1]
+],
+["DisplayEliteCollectiveHorn","",
+"BeakUpper",[0.360000014305115,0.837000012397766,0.324000000953674],[90,0,0],[-0.5,0.5,0.5]
+],
+["DisplayEliteCollectiveRing","",
+"BodyBase",[0,2.34999990463257,-2.11999988555908],[0,180,0],[3,3,3]
+],
+["DisplayEliteCollectiveHorn","",
+"BodyBase",[0,-0.189999997615814,0.519999980926514],[343.415008544922,280.364990234375,31.0550003051758],[3,3,3]
+],
+["DisplayEliteCollectiveHorn","",
+"BodyBase",[0,-0.189999997615814,0.519999980926514],[343.415008544922,79.6380004882813,328.945007324219],[-3,3,3]
+]]],
+["ElitePoisonEquipment",[["DisplayEliteUrchinCrown","",
+"BeakUpper",[0.0879999995231628,0.806999981403351,0.828999996185303],[344.713012695313,0.46399998664856,180],[0.194999992847443,0.194999992847443,0.194999992847443]
+],
+["DisplayEliteUrchinCrown","",
+"BodyBase",[-0.119999997317791,4.46000003814697,-2.1800000667572],[283.472991943359,180,0],[0.64300000667572,0.64300000667572,0.64300000667572]
+]]],
+["EliteEarthEquipment",[["DisplayEliteMendingAntlers","",
+"BeakUpper",[0,0.580999970436096,0.851999998092651],[293.717987060547,180,0],[2.20799994468689,2.20799994468689,2.20799994468689]
+],
+["DisplayEliteMendingAntlers","",
+"BodyBase",[0,4.71000003814697,-3.17000007629395],[22.9680004119873,180,0],[6.18599987030029,6.18599987030029,6.18599987030029]
+]]],
+["EliteIceEquipment",[["DisplayEliteIceCrown","",
+"BeakUpper",[0.0879999995231628,0.938000023365021,1.0900000333786],[344.713012695313,0.46399998664856,180],[0.103000000119209,0.103000000119209,0.103000000119209]
+],
+["DisplayEliteIceCrown","",
+"BodyBase",[-0.109999999403954,5.30000019073486,-2.6800000667572],[283.472991943359,180,0],[0.340000003576279,0.340000003576279,0.340000003576279]
+]]],
+["EliteBeadEquipment",[["DisplayEliteBeadSpike","",
+"BodyBase",[1.62999999523163,4.26999998092651,-1.50999999046326],[347.067993164063,166.516006469727,27.9370002746582],[-0.222000002861023,0.222000002861023,0.222000002861023]
+]]],
+["EliteAurelioniteEquipment",[["DisplayEliteAurelioniteEquipment","",
+"BeakUpper",[0,1,1.01999998092651],[277.441009521484,0,180],[2.01500010490417,2.01500010490417,2.01500010490417]
+],
+["DisplayEliteAurelioniteEquipment","",
+"BodyBase",[0,4.59999990463257,-4.53000020980835],[0,180,0],[4.72900009155273,4.72900009155273,4.72900009155273]
+]]],
+["EliteHauntedEquipment",[["DisplayEliteStealthCrown","",
+"BeakUpper",[0.0879999995231628,1.04499995708466,0.948000013828278],[344.713012695313,0.46399998664856,180],[0.170000001788139,0.170000001788139,0.170000001788139]
+],
+["DisplayEliteStealthCrown","",
+"BodyBase",[-0.119999997317791,4.78000020980835,-2.99000000953674],[283.472991943359,180,0],[0.563000023365021,0.563000023365021,0.563000023365021]
+]]],
+["EliteLightningEquipment",[["DisplayEliteRhinoHorn","",
+"BeakUpper",[0.112000003457069,1.52100002765656,0.638000011444092],[317.31201171875,0.46399998664856,180],[0.635999977588654,0.635999977588654,0.635999977588654]
+],
+["DisplayEliteRhinoHorn","",
+"BeakUpper",[0.123999997973442,1.13999998569489,0.958999991416931],[351.130004882813,0.301999986171722,179.975997924805],[0.625,0.625,0.625]
+],
+["DisplayEliteRhinoHorn","",
+"BodyBase",[0,3.67000007629395,-4.46999979019165],[316.963989257813,180,0.00100000004749745],[2.1029999256134,2.1029999256134,2.1029999256134]
+],
+["DisplayEliteRhinoHorn","",
+"BodyBase",[0,4.82000017166138,-3.30999994277954],[283.14599609375,179.998992919922,0.00100000004749745],[2.06599998474121,2.06599998474121,2.06599998474121]
+]]],
+["EliteFireEquipment",[["DisplayEliteHorn","",
+"BeakUpper",[-0.400000005960464,0.973999977111816,0.685999989509583],[5.98600006103516,140.330993652344,6.02799987792969],[-0.222000002861023,0.222000002861023,0.222000002861023]
+],
+["DisplayEliteHorn","",
+"BeakUpper",[0.587999999523163,0.949999988079071,0.685999989509583],[3.68400001525879,209.061004638672,2.22000002861023],[0.222000002861023,0.222000002861023,0.222000002861023]
+],
+["DisplayEliteHorn","",
+"BodyBase",[1.54999995231628,3.99000000953674,-2.63000011444092],[60.3390007019043,285.157012939453,107.528999328613],[0.732999980449677,0.732999980449677,0.732999980449677]
+],
+["DisplayEliteHorn","",
+"BodyBase",[-1.71000003814697,3.94000005722046,-2.69000005722046],[58.3040008544922,78.4860000610352,263.529998779297],[-0.732999980449677,0.732999980449677,0.732999980449677]
+]]],
+["BossDamageBonus",[["DisplayAPRound","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["BarrierOnKill",[["DisplayBrooch","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["NearbyDamageBonus",[["DisplayDiamond","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["PersonalShield",[["DisplayShieldGenerator","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["FlatHealth",[["DisplaySteakCurved","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["StunChanceOnHit",[["DisplayStunGrenade","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SpeedBoostPickup",[["DisplayElusiveAntlersLeft","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayElusiveAntlersRight","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["TreasureCache",[["DisplayKey","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["DelayedDamage",[["DisplayDelayedDamage","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ArmorPlate",[["DisplayRepulsionArmorPlate","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Crowbar",[["DisplayCrowbar","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["GoldOnHurt",[["DisplayRollOfPennies","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+  [
+    "FragileDamageBonus",
+    [
+      [
+        "DisplayDelicateWatch",
+        "",
+        "FrontLeg_Calf.L",
+        [ -0.05028, 0.3538, -0.03246 ],
+        [ 275.8947, 196.4797, 178.0141 ],
+        [ 1.3547, 2.07668, 2.07668 ]
+      ]
+    ]
+  ],
+["AttackSpeedAndMoveSpeed",[["DisplayCoffee","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Medkit",[["DisplayMedkit","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Hoof",[["DisplayHoof","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Bear",[["DisplayBear","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Mushroom",[["DisplayMushroom","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SecondarySkillMagazine",[["DisplayDoubleMag","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["OutOfCombatArmor",[["DisplayOddlyShapedOpal","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["CritAtLowerElevation",[["CritAtLowerElevationDisplay","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["BarrierOnCooldown",[["DisplayBarrierOnCooldown","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["IncreaseDamageOnMultiKill",[["DisplayIncreaseDamageOnMultiKill","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["IgniteOnKill",[["DisplayGasoline","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Firework",[["DisplayFirework","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["CritGlasses",[["DisplayGlasses","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["HealWhileSafe",[["DisplaySnail","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["WardOnLevel",[["DisplayWarbanner","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["AttackSpeedPerNearbyAllyOrEnemy",[["DisplayRageCrystal","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+  [
+    "BleedOnHit",
+    [
+      [
+        "DisplayTriTip",
+        "",
+        "BeakUpper",
+        [ 0.00414, 0.23537, 0.21245 ],
+        [ 319.109, 359.85, 0.404 ],
+        [ 2.92182, 2.63001, 2.99285 ]
+      ]
+    ]
+  ],
+["StickyBomb",[["DisplayStickyBomb","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Syringe",[["DisplaySyringeCluster","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Tooth",[["DisplayToothNecklaceDecal","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayToothMeshLarge","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayToothMeshSmall1","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayToothMeshSmall2","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayToothMeshSmall2","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayToothMeshSmall1","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["HealingPotion",[["DisplayHealingPotion","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SprintBonus",[["DisplaySoda","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Bandolier",[["DisplayBandolier","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+  [
+    "LowerPricedChests",
+    [
+      [
+        "DisplayLowerPricedChests",
+        "",
+        "Root",
+        [ -0.31263, 16.00481, 0.74466 ],
+        [ 85.01894, 180.0001, 180 ],
+        [ -14.51494, 16.38107, -10.70783 ]
+      ]
+    ]
+  ],
+["TriggerEnemyDebuffs",[["DisplayNoxiousThorn","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["JumpDamageStrike",[["DisplayJumpDamageStrike","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayJumpDamageStrike","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["StrengthenBurn",[["DisplayGasTank","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["BonusGoldPackOnKill",[["DisplayTome","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["AttackSpeedOnCrit",[["DisplayWolfPelt","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ExtraShrineItem",[["DisplayChanceDoll","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["EnergizedOnEquipmentUse",[["DisplayWarHorn","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["FreeChest",[["DisplayShippingRequestForm","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["RegeneratingScrap",[["DisplayRegeneratingScrap","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Thorns",[["DisplayRazorwireLeft","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ChainLightning",[["DisplayUkulele","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ExplodeOnDeath",[["DisplayWilloWisp","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Squid",[["DisplaySquidTurret","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Missile",[["DisplayMissileLauncher","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ExtraStatsOnLevelUp",[["DisplayPrayerBeads","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["FireRing",[["DisplayFireRing","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["TPHealingNova",[["DisplayGlowFlower","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Feather",[["DisplayFeather","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["EquipmentMagazine",[["DisplayBattery","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["DeathMark",[["DisplayDeathMark","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["TeleportOnLowHealth",[["DisplayTeleportOnLowHealth","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Infusion",[["DisplayInfusion","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["HealOnCrit",[["DisplayScythe","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Seed",[["DisplaySeed","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["DronesDropDynamite",[["DronesDropDynamiteDisplay","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SlowOnHit",[["DisplayBauble","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ExecuteLowHealthElite",[["DisplayGuillotine","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["PrimarySkillShuriken",[["DisplayShuriken","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["IncreasePrimaryDamage",[["DisplayIncreasePrimaryDamage","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["MoveSpeedOnKill",[["DisplayGrappleHook","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["IceRing",[["DisplayIceRing","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SpeedOnPickup",[["SpeedOnPickupDisplay","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SprintArmor",[["DisplayBuckler","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ShieldBooster",[["DisplayShieldBooster","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["KnockBackHitEnemies",[["DisplayKnockbackFin","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["JumpBoost",[["DisplayWaxBird","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SprintOutOfCombat",[["DisplayWhip","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["WarCryOnMultiKill",[["DisplayPauldron","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Phasing",[["DisplayStealthkit","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SharedSuffering",[["SharedSufferingDisplay","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["RandomEquipmentTrigger",[["DisplayBottledChaos","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["PhysicsProjectile",[["PhysicsProjectileDisplay","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Duplicator",[["DisplayDuplicator","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["CritDamage",[["DisplayLaserSight","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["StunAndPierce",[["DisplayElectricBoomerang","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["MoreMissile",[["DisplayICBM","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["PermanentDebuffOnHit",[["DisplayScorpion","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["HeadHunter",[["DisplaySkullcrown","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["IncreaseHealing",[["DisplayAntler","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayAntler","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["UtilitySkillMagazine",[["DisplayAfterburnerShoulderRing","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayAfterburnerShoulderRing","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ShockNearby",[["DisplayTeslaCoil","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Talisman",[["DisplayTalisman","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Behemoth",[["DisplayBehemoth","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["MeteorAttackOnHighDamage",[["DisplayMeteorAttackOnHighDamage","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["BarrierOnOverHeal",[["DisplayAegis","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Plant",[["DisplayInterstellarDeskPlant","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["LaserTurbine",[["DisplayLaserTurbine","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+  [
+    "ExtraLife",
+    [
+      [
+        "DisplayHippo",
+        "",
+        "Head",
+        [ 0, -0.05887, -1 ],
+        [ 303.2299, 169.3945, 5.74239 ],
+        [ 2.51989, 2.40874, 3.03369 ]
+      ]
+    ]
+  ],
+["BounceNearby",[["DisplayHook","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ItemDropChanceOnKill",[["DisplaySonorousEcho","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Dagger",[["DisplayDagger","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["FallBoots",[["DisplayGravBoots","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayGravBoots","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["NovaOnHeal",[["DisplayDevilHorns","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayDevilHorns","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Clover",[["DisplayClover","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["GhostOnKill",[["DisplayMask","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["BarrageOnBoss",[["DisplayTreasuryDividends","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Icicle",[["DisplayFrostRelic","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ArmorReductionOnHit",[["DisplayWarhammer","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["AlienHead",[["DisplayAlienHead","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ImmuneToDebuff",[["DisplayRainCoatBelt","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["KillEliteFrenzy",[["DisplayBrainstalk","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["BoostAllStats",[["DisplayGrowthNectar","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["LunarSecondaryReplacement",[["DisplayBirdClaw","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["MonstersOnShrineUse",[["DisplayMonstersOnShrineUse","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["FocusConvergence",[["DisplayFocusedConvergence","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["RandomDamageZone",[["DisplayRandomDamageZone","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["LunarDagger",[["DisplayLunarDagger","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["AutoCastEquipment",[["DisplayFossil","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["RandomlyLunar",[["DisplayDomino","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["LunarUtilityReplacement",[["DisplayBirdFoot","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ShieldOnly",[["DisplayShieldBug","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayShieldBug","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["LunarSun",[["DisplaySunHead","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplaySunHeadNeck","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["HalfAttackSpeedHalfCooldowns",[["DisplayLunarShoulderNature","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["LunarTrinket",[["DisplayBeads","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["LunarSpecialReplacement",[["DisplayBirdHeart","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["GoldOnHit",[["DisplayBoneCrown","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["HalfSpeedDoubleHealth",[["DisplayLunarShoulderStone","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["LunarPrimaryReplacement",[["DisplayBirdEye","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["RepeatHeal",[["DisplayCorpseflower","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["OnLevelUpFreeUnlock",[["DisplayOnLevelUpFreeUnlockTablet","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+],
+["DisplayOnLevelUpFreeUnlock","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Knurl",[["DisplayKnurl","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ShockDamageAura",[["ShockDamageAuraDisplay","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["PowerPyramid",[["DisplayPowerPyramid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ExtraEquipment",[["DisplayExtraEquipment","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["NovaOnLowHealth",[["DisplayJellyGuts","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["MinorConstructOnKill",[["DisplayDefenseNucleus","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["MasterBattery",[["DisplayPowerOrbSphere","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SprintWisp",[["DisplayBrokenMask","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ParentEgg",[["DisplayParentEgg","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["LightningStrikeOnHit",[["DisplayChargedPerforator","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Pearl",[["DisplayPearl","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["BleedOnHitAndExplode",[["DisplayBleedOnHitAndExplode","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["BeetleGland",[["DisplayBeetleGland","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["FireballsOnHit",[["DisplayFireballsOnHit","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["PowerCube",[["DisplayPowerCube","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ShinyPearl",[["DisplayShinyPearl","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SiphonOnLowHealth",[["DisplaySiphonOnLowHealth","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["TitanGoldDuringTP",[["DisplayGoldHeart","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["CritGlassesVoid",[["DisplayGlassesVoid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["TreasureCacheVoid",[["DisplayKeyVoid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["BearVoid",[["DisplayBearVoid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["MushroomVoid",[["DisplayMushroomVoid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+  [
+    "BleedOnHitVoid",
+    [
+      [
+        "DisplayTriTipVoid",
+        "",
+        "BeakUpper",
+        [ 0.00414, 0.23537, 0.21245 ],
+        [ 319.109, 359.85, 0.404 ],
+        [ 2.92182, 2.63001, 2.99285 ]
+      ]
+    ]
+  ],
+["ElementalRingVoid",[["DisplayVoidRing","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["SlowOnHitVoid",[["DisplayBaubleVoid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["MissileVoid",[["DisplayMissileLauncherVoid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ExplodeOnDeathVoid",[["DisplayWillowWispVoid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["ChainLightningVoid",[["DisplayUkuleleVoid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["EquipmentMagazineVoid",[["DisplayFuelCellVoid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["CloverVoid",[["DisplayCloverVoid","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+  [
+    "ExtraLifeVoid",
+    [
+      [
+        "DisplayHippoVoid",
+        "",
+        "BeakUpper",
+        [ 0.14017, 0.36096, 1.20083 ],
+        [ 308.7964, 359.7928, 185.7663 ],
+        [ 1, 1, 1 ]
+      ]
+    ]
+  ],
+["VoidMegaCrabItem",[["DisplayMegaCrabItem","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["Stew",[["StewDisplay","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["UltimateMeal",[["UltimateMealDisplay","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["WyrmOnHit",[["DisplayWyrmOnHit","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["CookedSteak",[["DisplayCookedSteakCurved","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]],
+["BonusHealthBoost",[["DisplayQuickFix","",
+"BodyBase",[0,0,0],[0,0,0],[1,1,1]
+]]]
+]}

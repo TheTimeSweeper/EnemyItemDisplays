@@ -24,6 +24,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Update="Rules\RoR2.DLC1\AcidLarvaBody.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Rules\RoR2.DLC1\GeepBody.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>

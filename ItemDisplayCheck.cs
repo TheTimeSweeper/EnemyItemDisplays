@@ -70,6 +70,7 @@ namespace EnemyItemDisplays
 
             SimpleJSON.JSONArray keyAssetArray = new SimpleJSON.JSONArray();
             SimpleJSON.JSONArray additionalChildrenArray = new SimpleJSON.JSONArray();
+
             if (additionalChildren.Length == 0)
             {
                 additionalChildren = new AdditionalChild[] {
@@ -156,7 +157,7 @@ namespace EnemyItemDisplays
                 //.Replace("}", "\n}")
                 //.Replace("[", "[\n")
                 //.Replace("]", "\n]")
-                ; 
+                ;
         }
     }
 }
