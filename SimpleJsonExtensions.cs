@@ -129,6 +129,11 @@ namespace EnemyItemDisplays
             JSONArray rules = new JSONArray();
             foreach (var rule in ruleGroup.displayRuleGroup.rules)
             {
+                if(rule.childName == null)
+                {
+                    continue;
+                }
+
                 JSONArray ruleJson = new JSONArray
                 {
                     rule.followerPrefab != null ? rule.followerPrefab.name : "",
@@ -140,6 +145,11 @@ namespace EnemyItemDisplays
                 };
                 rules.Add(ruleJson);
             }
+            if(rules.Count == 0)
+            {
+                return;
+            }
+
             node2.Add(rules);
             node.Add(node2);
         }
