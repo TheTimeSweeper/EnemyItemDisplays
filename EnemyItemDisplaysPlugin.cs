@@ -14,7 +14,7 @@ using static EnemyItemDisplays.SimpleJsonExtensions;
 
 namespace EnemyItemDisplays
 {
-    [BepInPlugin("com.TheTimeSweeper.EnemyItemDisplays", "EnemyItemDisplays", "1.1.0")]
+    [BepInPlugin("com.TheTimeSweeper.EnemyItemDisplays", "EnemyItemDisplays", "1.1.1")]
     public class EnemyItemDisplaysPlugin : BaseUnityPlugin
     {
         public static Dictionary<string, string> IDRSFiles = new Dictionary<string, string>();
