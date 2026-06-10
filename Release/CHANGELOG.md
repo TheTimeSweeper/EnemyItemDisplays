@@ -1,4 +1,7 @@
 ## Changelog
+`1.1.2`
+- Fix for ItemDisplayRule that has no childName which results in game freeze. (thanks viliger!)
+
 `1.1.1`
 - fixed default config
 
